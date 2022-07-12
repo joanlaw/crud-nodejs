@@ -14,6 +14,23 @@ try {
 
 };
 
+const addLanguages= async (request,response)=>{
+    try {
+        console.log(request.body);
+
+        const connection = await getConnection();
+
+        response.json("addLanguage");
+
+    } catch (error) {
+        response.status(500);
+        response.send(error.message);
+    }
+    
+    
+    };
+
 export const methods = {
-    getLanguages
+    getLanguages,
+    addLanguages
 };

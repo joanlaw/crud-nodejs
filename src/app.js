@@ -1,4 +1,4 @@
-import express from "express";
+import express, { json } from "express";
 import morgan from "morgan";
 
 //Routes
@@ -14,7 +14,7 @@ app.set("port", 4800);
 // Middlewares
 
 app.use(morgan("dev"));
-
+app.use(express.json());
 //Routes
 
 app.use("/api/languages", LenguageRoutes);
